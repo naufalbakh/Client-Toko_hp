@@ -67,6 +67,29 @@
                     <label for="formGroupExampleInput2" class="form-label">RAM/ROM</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi jumlah RAM dan ROM">
                 </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">OS</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis OS">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Baterai</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Kapasitas Baterai">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Resolusi</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Resolusi Layar">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Kamera</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Ukuran Kamera">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jaringan</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis Jaringan">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Tambah Spesifikasi</button>
+                </div>
             </div>
         </div>
 
