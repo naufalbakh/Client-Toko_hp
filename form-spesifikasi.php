@@ -58,39 +58,40 @@
     <!-- Section-->
     <section class="py-5">
         <div class="main-1">
-            <div class="container">
+            <form name="form" class="container" method="POST" action="proses-spesifikasi.php">
+                <input type="hidden" name="aksi" value="tambah" />
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">ID Spesifikasi</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Silahkan isi ID Spesifikasi">
+                    <label class="form-label">ID Spesifikasi</label>
+                    <input type="text" class="form-control" name="id_spesifikasi" id="formGroupExampleInput" placeholder="Silahkan isi ID Spesifikasi">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">RAM/ROM</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi jumlah RAM dan ROM">
+                    <input type="text" class="form-control" name="ram_rom" id="formGroupExampleInput2" placeholder="Silahkan isi jumlah RAM dan ROM">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">OS</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis OS">
+                    <input type="text" class="form-control" name="os" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis OS">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Baterai</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Kapasitas Baterai">
+                    <input type="text" class="form-control" name="baterai" id="formGroupExampleInput2" placeholder="Silahkan isi Kapasitas Baterai">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Resolusi</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Resolusi Layar">
+                    <input type="text" class="form-control" name="resolusi" id="formGroupExampleInput2" placeholder="Silahkan isi Resolusi Layar">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Kamera</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Ukuran Kamera">
+                    <input type="text" class="form-control" name="kamera" id="formGroupExampleInput2" placeholder="Silahkan isi Ukuran Kamera">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jaringan</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis Jaringan">
+                    <input type="text" class="form-control" name="jaringan" id="formGroupExampleInput2" placeholder="Silahkan isi Jenis Jaringan">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Tambah Spesifikasi</button>
+                    <button type="submit" name="simpan" class="btn btn-primary">Tambah Spesifikasi</button>
                 </div>
-            </div>
+            </form>
         </div>
 
     </section>

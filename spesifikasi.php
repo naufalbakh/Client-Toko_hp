@@ -1,3 +1,7 @@
+<?php
+include "Client-spesifikasi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,12 +61,6 @@
 
     <!-- Section-->
     <section class="py-5">
-        <?php
-        include "config.php";
-        $spesifikasi = "SELECT * FROM spesifikasi";
-        $koneksi = $con->query($spesifikasi);
-        $no = 1;
-        ?>
         <div class="main-1">
             <div class="container">
                 <div class="table-responsive-lg">
@@ -82,27 +80,31 @@
                             </tr>
                         </thead>
                         <tbody class="table-border text-center align-middle text-wrap">
-                            <?php
-                            while ($a = $koneksi->fetch_array()) {
+                            <?php $no = 1;
+                            $data_array = $abc->tampil_semua_spesifikasi();
+                            foreach ($data_array as $r) {
                             ?>
                                 <tr>
-                                    <th scope="row"><?= $no++ ?></th>
-                                    <td><?php echo $a['id_spesifikasi'] ?></td>
-                                    <td><?php echo $a['ram_rom'] ?></td>
-                                    <td><?php echo $a['os'] ?></td>
-                                    <td><?php echo $a['baterai'] ?></td>
-                                    <td><?php echo $a['resolusi'] ?></td>
-                                    <td><?php echo $a['kamera'] ?></td>
-                                    <td><?php echo $a['jaringan'] ?></td>
+                                    <td><?= $no ?></td>
+                                    <td><?= $r->id_spesifikasi ?></td>
+                                    <td><?= $r->ram_rom ?></td>
+                                    <td><?= $r->os ?></td>
+                                    <td><?= $r->baterai ?></td>
+                                    <td><?= $r->resolusi ?></td>
+                                    <td><?= $r->kamera ?></td>
+                                    <td><?= $r->jaringan ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <button class="btn btn-outline-primary btn-sm" type="button">Ubah</button>
-                                            <button class="btn btn-outline-danger btn-sm" type="button">Hapus</button>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-spesifikasi.php?id_spesifikasi=<?= $r->id_spesifikasi ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-spesifikasi.php?aksi=hapus&id_spesifikasi=<?= $r->id_spesifikasi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 
                                 </tr>
-                            <?php } ?>
+                            <?php $no++;
+                            }
+                            unset($data_array, $r, $no);
+                            ?>
                         </tbody>
                     </table>
                 </div>

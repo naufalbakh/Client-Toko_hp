@@ -12,7 +12,7 @@ if($_POST['aksi'] == 'tambah'){
                   "jaringan"=>$_POST['jaringan'],
                   "aksi"=>$_POST['aksi']);
     $abc -> tambah_spesifikasi($data);
-    header('location:index.php?page=daftar-data');              
+    header('location:spesifikasi.php');              
 } else if ($_POST['aksi']=='ubah'){
     $data = array("id_spesifikasi"=>$_POST['id_spesifikasi'],
                   "ram_rom"=>$_POST['ram_rom'],
@@ -23,11 +23,11 @@ if($_POST['aksi'] == 'tambah'){
                   "jaringan"=>$_POST['jaringan'],
                   "aksi"=>$_POST['aksi']);
     $abc -> ubah_spesifikasi($data);
-    header('location:index.php?page=daftar-data');               
+    header('location:spesifikasi.php');               
 } else if ($_GET['aksi']=='hapus'){
     $data = array("id_spesifikasi"=>$_GET['id_spesifikasi'],
                   "aksi"=>$_GET['aksi']);
     $abc -> hapus_spesifikasi($data);         
-    header('location:index.php?page=daftar-data');
+    header('location:spesifikasi.php');
 }  
 unset($abc,$data);
