@@ -48,6 +48,16 @@ include "client-hp.php";
                             <li><a class="dropdown-item" href="form-spesifikasi.php">Tambah Spesifikasi</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="pelanggan.php">Data Pelanggan</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="form-pelanggan.php">Tambah Pelanggan</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
@@ -77,7 +87,7 @@ include "client-hp.php";
             ?>
             <form name="form" class="container" method="POST" action="proses-hp.php">
                 <input type="hidden" name="aksi" value="ubah" />
-                <input type="hidden" name="id_spesifikasi" value="<?= $r->id_spesifikasi ?>" />
+                <input type="hidden" name="id_spesifikasi" value="<?= $r->id_pelanggan ?>" />
                 <div class="mb-3">
                     <label class="form-label">ID HP</label>
                     <input type="text" class="form-control" name="id_hp" id="formGroupExampleInput" value="<?= $r->id_hp ?>" disabled>

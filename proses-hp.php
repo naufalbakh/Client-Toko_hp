@@ -1,6 +1,6 @@
 <?php
 error_reporting(1);
-include "Client-hp.php";
+include "client-hp.php";
 
 if($_POST['aksi'] == 'tambah'){
     $data = array("id_hp"=>$_POST['id_hp'],
@@ -9,7 +9,7 @@ if($_POST['aksi'] == 'tambah'){
                   "merek"=>$_POST['merek'],
                   "harga"=>$_POST['harga'],
                   "aksi"=>$_POST['aksi']);
-    $abc -> tambah_data($data);
+    $abc -> tambah_hp($data);
     header('location:hp.php');              
 } else if ($_POST['aksi']=='ubah'){
     $data = array("id_hp"=>$_POST['id_hp'],
@@ -18,12 +18,12 @@ if($_POST['aksi'] == 'tambah'){
                   "merek"=>$_POST['merek'],
                   "harga"=>$_POST['harga'],
                   "aksi"=>$_POST['aksi']);
-    $abc -> ubah_data($data);
+    $abc -> ubah_hp($data);
     header('location:hp.php');               
 } else if ($_GET['aksi']=='hapus'){
     $data = array("id_hp"=>$_GET['id_hp'],
                   "aksi"=>$_GET['aksi']);
-    $abc -> hapus_data($data);         
+    $abc -> hapus_hp($data);         
     header('location:hp.php');
 }  
 unset($abc,$data);

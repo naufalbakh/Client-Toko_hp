@@ -1,5 +1,5 @@
 <?php
-include "client-hp.php";
+include "client-pelanggan.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +29,9 @@ include "client-hp.php";
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
+                        <a class="nav-link dropdown-toggle " id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="hp.php">Data HP</a></li>
+                            <li><a class="dropdown-item" href="hp.php">Data HP</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -49,13 +49,13 @@ include "client-hp.php";
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
+                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="pelanggan.php">Data Pelanggan</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="form-pelanggan.php">Tambah Pelanggan</a></li>
+                            <li><a class="dropdown-item active" href="form-pelanggan.php">Tambah Pelanggan</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -73,8 +73,8 @@ include "client-hp.php";
     <header class="bg-dark py-2">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">HP</h1>
-                <p class="lead fw-normal text-white-50 mb-0">data hp</p>
+                <h1 class="display-4 fw-bolder">Edit Pelanggan</h1>
+                <p class="lead fw-normal text-white-50 mb-0">pelanggan lengkap</p>
             </div>
         </div>
     </header>
@@ -82,49 +82,40 @@ include "client-hp.php";
     <!-- Section-->
     <section class="py-5">
         <div class="main-1">
-            <div class="container">
-                <div class="table-responsive-lg">
-                    <table class="table caption-top">
-                        <caption class="text-center">Daftar HP</caption>
-                        <thead class="table-dark text-center">
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">ID HP</th>
-                                <th scope="col">ID Spesifikasi</th>
-                                <th scope="col">Nama HP</th>
-                                <th scope="col">Merek</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-border text-center align-middle text-wrap">
-                            <?php $no = 1;
-                            $data_array = $abc->tampil_semua_hp();
-                            foreach ($data_array as $r) {
-                            ?>
-                                <tr>
-                                    <td><?= $no ?></td>
-                                    <td><?= $r->id_hp ?></td>
-                                    <td><?= $r->id_spesifikasi ?></td>
-                                    <td><?= $r->namahp ?></td>
-                                    <td><?= $r->merek ?></td>
-                                    <td><?= $r->harga ?></td>
-                                    <td>
-                                        <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-hp.php?id_hp=<?= $r->id_hp ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-hp.php?aksi=hapus&id_hp=<?= $r->id_hp ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
-                                        </div>
-                                    </td>
-
-                                </tr>
-                            <?php $no++;
-                            }
-                            unset($data_array, $r, $no);
-                            ?>
-                        </tbody>
-                    </table>
+            <?php
+            $r = $abc->tampil_pelanggan($_GET['id_pelanggan']);
+            ?>
+            <form name="form" class="container" method="POST" action="proses-pelanggan.php">
+                <input type="hidden" name="aksi" value="ubah" />
+                <input type="hidden" name="id_pelanggan" value="<?= $r->id_pelanggan ?>" />
+                <div class="mb-3">
+                    <label class="form-label">ID Pelanggan</label>
+                    <input type="text" class="form-control" name="id_pelanggan" id="formGroupExampleInput" value="<?= $r->id_pelanggan ?>" disabled>
                 </div>
-            </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">ID HP</label>
+                    <input type="text" class="form-control" name="id_hp" id="formGroupExampleInput2" value="<?= $r->id_hp ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">NIK</label>
+                    <input type="text" class="form-control" name="nik" id="formGroupExampleInput2" value="<?= $r->nik ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Nama</label>
+                    <input type="text" class="form-control" name="nama" id="formGroupExampleInput2" value="<?= $r->nama ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" name="alamat" id="formGroupExampleInput2" value="<?= $r->alamat ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">No Whatsapp</label>
+                    <input type="text" class="form-control" name="no_hp" id="formGroupExampleInput2" value="<?= $r->no_hp ?>">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" name="ubah" class="btn btn-primary">Edit Pelanggan</button>
+                </div>
+            </form>
         </div>
 
     </section>

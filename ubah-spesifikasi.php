@@ -48,6 +48,16 @@ include "client-spesifikasi.php";
                             <li><a class="dropdown-item active" href="form-spesifikasi.php">Tambah Data</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="pelanggan.php">Data Pelanggan</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="form-pelanggan.php">Tambah Pelanggan</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">

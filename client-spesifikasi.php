@@ -98,5 +98,5 @@ class Client{
 
 }
 
-$url = 'http://192.168.1.7/tokohp/server/server_spesifikasi.php';
+$url = 'http://192.168.1.6/tokohp/server/server_spesifikasi.php';
 $abc = new Client($url);

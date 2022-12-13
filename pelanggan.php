@@ -1,5 +1,5 @@
 <?php
-include "client-hp.php";
+include "client-pelanggan.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +29,9 @@ include "client-hp.php";
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="hp.php">Data HP</a></li>
+                            <li><a class="dropdown-item" href="hp.php">Data HP</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -49,9 +49,9 @@ include "client-hp.php";
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
+                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="pelanggan.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pelanggan</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="pelanggan.php">Data Pelanggan</a></li>
+                            <li><a class="dropdown-item active" href="pelanggan.php">Data Pelanggan</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -73,8 +73,8 @@ include "client-hp.php";
     <header class="bg-dark py-2">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">HP</h1>
-                <p class="lead fw-normal text-white-50 mb-0">data hp</p>
+                <h1 class="display-4 fw-bolder">Pelanggan</h1>
+                <p class="lead fw-normal text-white-50 mb-0">data pelanggan</p>
             </div>
         </div>
     </header>
@@ -85,34 +85,36 @@ include "client-hp.php";
             <div class="container">
                 <div class="table-responsive-lg">
                     <table class="table caption-top">
-                        <caption class="text-center">Daftar HP</caption>
+                        <caption class="text-center">Daftar Pelanggan</caption>
                         <thead class="table-dark text-center">
                             <tr>
                                 <th scope="col">No</th>
+                                <th scope="col">ID Pelanggan</th>
                                 <th scope="col">ID HP</th>
-                                <th scope="col">ID Spesifikasi</th>
-                                <th scope="col">Nama HP</th>
-                                <th scope="col">Merek</th>
-                                <th scope="col">Harga</th>
+                                <th scope="col">NIK</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">No Whatsapp</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="table-border text-center align-middle text-wrap">
                             <?php $no = 1;
-                            $data_array = $abc->tampil_semua_hp();
+                            $data_array = $abc->tampil_semua_pelanggan();
                             foreach ($data_array as $r) {
                             ?>
                                 <tr>
                                     <td><?= $no ?></td>
+                                    <td><?= $r->id_pelanggan ?></td>
                                     <td><?= $r->id_hp ?></td>
-                                    <td><?= $r->id_spesifikasi ?></td>
-                                    <td><?= $r->namahp ?></td>
-                                    <td><?= $r->merek ?></td>
-                                    <td><?= $r->harga ?></td>
+                                    <td><?= $r->nik ?></td>
+                                    <td><?= $r->nama ?></td>
+                                    <td><?= $r->alamat ?></td>
+                                    <td><?= $r->no_hp ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-hp.php?id_hp=<?= $r->id_hp ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-hp.php?aksi=hapus&id_hp=<?= $r->id_hp ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-pelanggan.php?id_pelanggan=<?= $r->id_hp ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-pelanggan.php?aksi=hapus&id_pelanggan=<?= $r->id_hp ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 
