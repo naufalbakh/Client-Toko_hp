@@ -63,8 +63,8 @@ include "client-hp.php";
     <header class="bg-dark py-2">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Edit Spesifikasi</h1>
-                <p class="lead fw-normal text-white-50 mb-0">spesifikasi lengkap</p>
+                <h1 class="display-4 fw-bolder">Edit HP</h1>
+                <p class="lead fw-normal text-white-50 mb-0">HP lengkap</p>
             </div>
         </div>
     </header>
@@ -73,41 +73,33 @@ include "client-hp.php";
     <section class="py-5">
         <div class="main-1">
             <?php
-            $r = $abc->tampil_spesifikasi($_GET['id_spesifikasi']);
+            $r = $abc->tampil_hp($_GET['id_hp']);
             ?>
-            <form name="form" class="container" method="POST" action="proses-spesifikasi.php">
+            <form name="form" class="container" method="POST" action="proses-hp.php">
                 <input type="hidden" name="aksi" value="ubah" />
                 <input type="hidden" name="id_spesifikasi" value="<?= $r->id_spesifikasi ?>" />
                 <div class="mb-3">
-                    <label class="form-label">ID Spesifikasi</label>
-                    <input type="text" class="form-control" name="id_spesifikasi" id="formGroupExampleInput" value="<?= $r->id_spesifikasi ?>" disabled>
+                    <label class="form-label">ID HP</label>
+                    <input type="text" class="form-control" name="id_hp" id="formGroupExampleInput" value="<?= $r->id_hp ?>" disabled>
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">RAM/ROM</label>
-                    <input type="text" class="form-control" name="ram_rom" id="formGroupExampleInput2" value="<?= $r->ram_rom ?>">
+                    <label for="formGroupExampleInput2" class="form-label">ID Spesifikasi</label>
+                    <input type="text" class="form-control" name="id_spesifikasi" id="formGroupExampleInput2" value="<?= $r->id_spesifikasi ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">OS</label>
-                    <input type="text" class="form-control" name="os" id="formGroupExampleInput2" value="<?= $r->os ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Nama HP</label>
+                    <input type="text" class="form-control" name="namahp" id="formGroupExampleInput2" value="<?= $r->namahp ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Baterai</label>
-                    <input type="text" class="form-control" name="baterai" id="formGroupExampleInput2" value="<?= $r->baterai ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Merek</label>
+                    <input type="text" class="form-control" name="merek" id="formGroupExampleInput2" value="<?= $r->merek ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Resolusi</label>
-                    <input type="text" class="form-control" name="resolusi" id="formGroupExampleInput2" value="<?= $r->resolusi ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Kamera</label>
-                    <input type="text" class="form-control" name="kamera" id="formGroupExampleInput2" value="<?= $r->kamera ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jaringan</label>
-                    <input type="text" class="form-control" name="jaringan" id="formGroupExampleInput2" value="<?= $r->jaringan ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Harga</label>
+                    <input type="text" class="form-control" name="harga" id="formGroupExampleInput2" value="<?= $r->harga ?>">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" name="ubah" class="btn btn-primary">Edit Spesifikasi</button>
+                    <button type="submit" name="ubah" class="btn btn-primary">Edit HP</button>
                 </div>
             </form>
         </div>

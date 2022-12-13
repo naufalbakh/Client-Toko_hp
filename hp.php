@@ -89,7 +89,7 @@ include "client-hp.php";
                         </thead>
                         <tbody class="table-border text-center align-middle text-wrap">
                             <?php $no = 1;
-                            $data_array = $abc->tampil_semua_spesifikasi();
+                            $data_array = $abc->tampil_semua_hp();
                             foreach ($data_array as $r) {
                             ?>
                                 <tr>
@@ -101,8 +101,8 @@ include "client-hp.php";
                                     <td><?= $r->harga ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-hp.php?id_spesifikasi=<?= $r->id_spesifikasi ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-hp.php?aksi=hapus&id_spesifikasi=<?= $r->id_spesifikasi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-hp.php?id_hp=<?= $r->id_hp ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-hp.php?aksi=hapus&id_hp=<?= $r->id_hp ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 
