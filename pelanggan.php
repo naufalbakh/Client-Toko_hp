@@ -113,8 +113,8 @@ include "client-pelanggan.php";
                                     <td><?= $r->no_hp ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-pelanggan.php?id_pelanggan=<?= $r->id_hp ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-pelanggan.php?aksi=hapus&id_pelanggan=<?= $r->id_hp ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-pelanggan.php?id_pelanggan=<?= $r->id_pelanggan ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-pelanggan.php?aksi=hapus&id_pelanggan=<?= $r->id_pelanggan ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 

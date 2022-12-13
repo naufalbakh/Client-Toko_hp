@@ -1,6 +1,6 @@
 <?php
 error_reporting(1);
-include "Client-pelanggan.php";
+include "client-pelanggan.php";
 
 if($_POST['aksi'] == 'tambah'){
     $data = array("id_pelanggan"=>$_POST['id_pelanggan'],
@@ -10,7 +10,7 @@ if($_POST['aksi'] == 'tambah'){
                   "alamat"=>$_POST['alamat'],
                   "no_hp"=>$_POST['no_hp'],
                   "aksi"=>$_POST['aksi']);
-    $abc -> tambah_data($data);
+    $abc -> tambah_pelanggan($data);
     header('location:pelanggan.php');              
 } else if ($_POST['aksi']=='ubah'){
     $data = array("id_pelanggan"=>$_POST['id_pelanggan'],
@@ -20,12 +20,12 @@ if($_POST['aksi'] == 'tambah'){
                   "alamat"=>$_POST['alamat'],
                   "no_hp"=>$_POST['no_hp'],
                   "aksi"=>$_POST['aksi']);
-    $abc -> ubah_data($data);
+    $abc -> ubah_pelanggan($data);
     header('location:pelanggan.php');               
 } else if ($_GET['aksi']=='hapus'){
     $data = array("id_pelanggan"=>$_GET['id_pelanggan'],
                   "aksi"=>$_GET['aksi']);
-    $abc -> hapus_data($data);         
+    $abc -> hapus_pelanggan($data);         
     header('location:pelanggan.php');
 }  
 unset($abc,$data);

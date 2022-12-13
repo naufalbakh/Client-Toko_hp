@@ -37,6 +37,7 @@ class Client{
     public function tambah_hp($data){
         $data = '{
             "id_hp":"'.$data['id_hp'].'",
+            "id_spesifikasi":"'.$data['id_spesifikasi'].'",
             "namahp":"'.$data['namahp'].'",
             "merek":"'.$data['merek'].'",
             "harga":"'.$data['harga'].'",
@@ -54,6 +55,7 @@ class Client{
 
     public function ubah_hp($data){
         $data='{"id_hp":"'.$data['id_hp'].'",
+            "id_spesifikasi":"'.$data['id_spesifikasi'].'",
             "namahp":"'.$data['namahp'].'",
             "merek":"'.$data['merek'].'",
             "harga":"'.$data['harga'].'",

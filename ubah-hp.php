@@ -87,7 +87,7 @@ include "client-hp.php";
             ?>
             <form name="form" class="container" method="POST" action="proses-hp.php">
                 <input type="hidden" name="aksi" value="ubah" />
-                <input type="hidden" name="id_spesifikasi" value="<?= $r->id_pelanggan ?>" />
+                <input type="hidden" name="id_hp" value="<?= $r->id_hp ?>" />
                 <div class="mb-3">
                     <label class="form-label">ID HP</label>
                     <input type="text" class="form-control" name="id_hp" id="formGroupExampleInput" value="<?= $r->id_hp ?>" disabled>
