@@ -29,9 +29,9 @@ include "client-transaksi.php";
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="hp.php">Data HP</a></li>
+                            <li><a class="dropdown-item" href="hp.php">Data HP</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
@@ -60,11 +60,11 @@ include "client-transaksi.php";
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
+                    <a class="btn btn-primary active fw-bold" href="transaksi.php">
                         <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
+                        Transaksi
+                        <span class="badge bg-primary text-white ms-1 rounded-pill">0</span>
+                    </a>
                 </form>
             </div>
         </div>
@@ -109,8 +109,8 @@ include "client-transaksi.php";
                                     <td><?= $r->jumlah ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-transaksi.php?id_hp=<?= $r->id_transaksi ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-transaksi.php?aksi=hapus&id_hp=<?= $r->id_transaksi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-transaksi.php?id_transaksi=<?= $r->id_transaksi ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-transaksi.php?aksi=hapus&id_transaksi=<?= $r->id_transaksi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 
