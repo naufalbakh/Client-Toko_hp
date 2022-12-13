@@ -1,5 +1,5 @@
 <?php
-include "Client-spesifikasi.php";
+include "client-hp.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +31,11 @@ include "Client-spesifikasi.php";
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="spesifikasi.php">Data HP</a></li>
+                            <li><a class="dropdown-item active" href="hp.php">Data HP</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="form-spesifikasi.php">Tambah HP</a></li>
+                            <li><a class="dropdown-item" href="form-hp.php">Tambah HP</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -101,8 +101,8 @@ include "Client-spesifikasi.php";
                                     <td><?= $r->harga ?></td>
                                     <td>
                                         <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-spesifikasi.php?id_spesifikasi=<?= $r->id_spesifikasi ?>">Ubah</a>
-                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-spesifikasi.php?aksi=hapus&id_spesifikasi=<?= $r->id_spesifikasi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a class="btn btn-outline-primary btn-sm" type="button" a href="ubah-hp.php?id_spesifikasi=<?= $r->id_spesifikasi ?>">Ubah</a>
+                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-hp.php?aksi=hapus&id_spesifikasi=<?= $r->id_spesifikasi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')">Hapus</a>
                                         </div>
                                     </td>
 

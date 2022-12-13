@@ -1,7 +1,3 @@
-<?php
-include "client-spesifikasi.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,23 +25,23 @@ include "client-spesifikasi.php";
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
+                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="hp.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">HP</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="hp.php">Data HP</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="form-hp.php">Tambah HP</a></li>
+                            <li><a class="dropdown-item active" href="form-hp.php">Tambah HP</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active fw-bold" id="navbarDropdown" href="spesifikasi.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Spesifikasi</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="spesifikasi.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Spesifikasi</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="spesifikasi.php">Data Spesifikasi</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item active" href="form-spesifikasi.php">Tambah Data</a></li>
+                            <li><a class="dropdown-item" href="form-spesifikasi.php">Tambah Spesifikasi</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -63,8 +59,8 @@ include "client-spesifikasi.php";
     <header class="bg-dark py-2">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Edit Spesifikasi</h1>
-                <p class="lead fw-normal text-white-50 mb-0">spesifikasi lengkap</p>
+                <h1 class="display-4 fw-bolder">Tambah HP</h1>
+                <p class="lead fw-normal text-white-50 mb-0">HP lengkap</p>
             </div>
         </div>
     </header>
@@ -72,42 +68,30 @@ include "client-spesifikasi.php";
     <!-- Section-->
     <section class="py-5">
         <div class="main-1">
-            <?php
-            $r = $abc->tampil_spesifikasi($_GET['id_spesifikasi']);
-            ?>
-            <form name="form" class="container" method="POST" action="proses-spesifikasi.php">
-                <input type="hidden" name="aksi" value="ubah" />
-                <input type="hidden" name="id_spesifikasi" value="<?= $r->id_spesifikasi ?>" />
+            <form name="form" class="container" method="POST" action="proses-hp.php">
+                <input type="hidden" name="aksi" value="tambah" />
                 <div class="mb-3">
-                    <label class="form-label">ID Spesifikasi</label>
-                    <input type="text" class="form-control" name="id_spesifikasi" id="formGroupExampleInput" value="<?= $r->id_spesifikasi ?>" disabled>
+                    <label class="form-label">ID HP</label>
+                    <input type="text" class="form-control" name="id_hp" id="formGroupExampleInput" placeholder="Silahkan isi ID HP">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">RAM/ROM</label>
-                    <input type="text" class="form-control" name="ram_rom" id="formGroupExampleInput2" value="<?= $r->ram_rom ?>">
+                    <label for="formGroupExampleInput2" class="form-label">ID Spesifikasi</label>
+                    <input type="text" class="form-control" name="id_spesifikasi" id="formGroupExampleInput2" placeholder="Silahkan isi ID Spesifikasi">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">OS</label>
-                    <input type="text" class="form-control" name="os" id="formGroupExampleInput2" value="<?= $r->os ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Nama HP</label>
+                    <input type="text" class="form-control" name="namahp" id="formGroupExampleInput2" placeholder="Silahkan isi Nama HP">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Baterai</label>
-                    <input type="text" class="form-control" name="baterai" id="formGroupExampleInput2" value="<?= $r->baterai ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Merek</label>
+                    <input type="text" class="form-control" name="merek" id="formGroupExampleInput2" placeholder="Silahkan isi Merek HP">
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Resolusi</label>
-                    <input type="text" class="form-control" name="resolusi" id="formGroupExampleInput2" value="<?= $r->resolusi ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Kamera</label>
-                    <input type="text" class="form-control" name="kamera" id="formGroupExampleInput2" value="<?= $r->kamera ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jaringan</label>
-                    <input type="text" class="form-control" name="jaringan" id="formGroupExampleInput2" value="<?= $r->jaringan ?>">
+                    <label for="formGroupExampleInput2" class="form-label">Harga</label>
+                    <input type="text" class="form-control" name="harga" id="formGroupExampleInput2" placeholder="Silahkan isi Jumlah Harga">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" name="ubah" class="btn btn-primary">Edit Spesifikasi</button>
+                    <button type="submit" name="simpan" class="btn btn-primary">Tambah Spesifikasi</button>
                 </div>
             </form>
         </div>
