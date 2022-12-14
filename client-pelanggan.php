@@ -12,6 +12,7 @@ class Client{
         return $data;
         unset($data);
     }
+
     public function tampil_semua_pelanggan(){
         $client = curl_init($this->url);
         curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
@@ -73,8 +74,6 @@ class Client{
         unset($data,$c,$response); 
     }
 
-
-
     public function hapus_pelanggan($data){
         $id_pelanggan = $this->filter($data['id_pelanggan']);
         $data='{"id_pelanggan":"'.$id_pelanggan.'",
@@ -95,5 +94,5 @@ class Client{
 
 }
 
-$url = 'http://192.168.1.6/tokohp/server/server_pelanggan.php';
+$url = 'http://192.168.104.182/tokohp/server/server_pelanggan.php';
 $abc = new Client($url);

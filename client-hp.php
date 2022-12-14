@@ -93,5 +93,5 @@ class Client{
 
 }
 
-$url = 'http://192.168.1.6/tokohp/server/server_hp.php';
+$url = 'http://192.168.104.182/tokohp/server/server_hp.php';
 $abc = new Client($url);
