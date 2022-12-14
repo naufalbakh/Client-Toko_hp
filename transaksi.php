@@ -59,13 +59,20 @@ include "client-transaksi.php";
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <a class="btn btn-primary active fw-bold" href="transaksi.php">
-                        <i class="bi-cart-fill me-1"></i>
-                        Transaksi
-                        <span class="badge bg-primary text-white ms-1 rounded-pill">0</span>
-                    </a>
-                </form>
+                <?php $no = 2;
+                 {
+                ?>
+                    <form class="d-flex">
+                        <a class="btn btn-primary active fw-bold" href="transaksi.php">
+                            <i class="bi-cart-fill me-1"></i>
+                            Transaksi
+                            <span class="badge bg-primary text-white ms-1 rounded-pill"><?= $no ?></span>
+                        </a>
+                    </form>
+                <?php $no++;
+                }
+                unset($no);
+                ?>
             </div>
         </div>
     </nav>
